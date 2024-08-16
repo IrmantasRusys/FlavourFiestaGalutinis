@@ -16,7 +16,7 @@ const changeTheme = function () {
   this.setAttribute("aria-pressed", isPressed);
   $HTML.setAttribute(
     "data-theme",
-    $HTML.dataset.theme === "light" ? "light" : "dark"
+    $HTML.dataset.theme === "light" ? "dark" : "light"
   );
   sessionStorage.setItem("theme", $HTML.dataset.theme);
 };

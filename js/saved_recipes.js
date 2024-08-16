@@ -1,11 +1,8 @@
-/**
- * Importuojame funkciją getTime iš module.js failo.
- */
 import { getTime } from "./module.js";
 
 /**
  * Filtruojame vietinio saugyklos raktus ir grąžiname tuos, kurie prasideda su "cookio-recipe".
- * @returns {Array<String>} - Filtruoti vietinio saugyklos raktai.
+ * @returns {Array<String>} -
  */
 const getSavedRecipes = () => {
   return Object.keys(window.localStorage).filter((item) =>
@@ -15,9 +12,9 @@ const getSavedRecipes = () => {
 
 /**
  * Sugeneruojame recepto kortelės HTML struktūrą.
- * @param {Object} recipe - Recepto informacija.
- * @param {Number} index - Kortelės indeksas (naudojamas animacijos vėlavimui).
- * @returns {HTMLElement} - Sugeneruota kortelė.
+ * @param {Object} recipe
+ * @param {Number} index
+ * @returns {HTMLElement}
  */
 const createRecipeCard = (recipe, index) => {
   const { image, label: title, totalTime: cookingTime, uri } = recipe;
@@ -92,5 +89,4 @@ const renderSavedRecipes = () => {
   $savedRecipeContainer.appendChild($gridList);
 };
 
-// Inicijuojame receptų rodymą
 renderSavedRecipes();

@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -18,10 +17,13 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20' 
+        node-version: '20'
 
     - name: Install dependencies
       run: npm install
+    
+    - name: Fix permissions for jest
+      run: chmod +x node_modules/.bin/jest
 
     - name: Run tests
       run: npm test
